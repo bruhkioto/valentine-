@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for u ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 80px;
+}
+
+img {
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 35px;
+  color: white;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+#startBtn {
+  background: white;
+}
+
+#yes {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background-color: gray;
+  color: white;
+  position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <img src="photo.jpg">
+
+  <h1 id="text">I have something important to ask you 💌</h1>
+
+  <button id="startBtn" onclick="nextStep()">Click me</button>
+
+  <div id="final" style="display:none;">
+    <h1>will u be my valentine? ❤️</h1>
+    <button id="yes" onclick="alert('YAY love u amira❤️')">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <br><br>
+
+  <button onclick="playMusic()">Play Music 🎵</button>
+
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
+
+<script>
+function nextStep() {
+  document.getElementById("text").style.display = "none";
+  document.getElementById("startBtn").style.display = "none";
+  document.getElementById("final").style.display = "block";
+}
+
+function playMusic() {
+  document.getElementById("bgMusic").play();
+}
+
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", function() {
+  noBtn.style.top = Math.random() * window.innerHeight + "px";
+  noBtn.style.left = Math.random() * window.innerWidth + "px";
+});
+</script>
+
+</body>
+</html>
